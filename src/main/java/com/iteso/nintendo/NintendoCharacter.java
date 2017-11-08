@@ -1,12 +1,16 @@
 package com.iteso.nintendo;
 
+import com.iteso.nintendo.behavior.iAccelerate;
+import com.iteso.nintendo.items.iPower;
+
 /**
  * Created by rvillalobos on 3/3/16.
  */
 public abstract class NintendoCharacter {
       private String speed = null;
       private String name = null;
-      private String currentPower = null;
+      private iPower currentPower = null;
+      private iAccelerate currentAccelerate = null;
 
 
     public String getSpeed() {
@@ -33,11 +37,19 @@ public abstract class NintendoCharacter {
     public abstract void setPower(String powerItem);
 
 
-    public String getCurrentPower() {
+    public iPower getCurrentPower() {
         return currentPower;
     }
 
-    public void setCurrentPower(String currentPower) {
+    public void setCurrentPower(iPower currentPower) {
         this.currentPower = currentPower;
+    }
+
+    public iAccelerate getCurrentAccelerate() {
+        return currentAccelerate;
+    }
+
+    public void setCurrentAccelerate(iAccelerate currentAccelerate) {
+        this.currentAccelerate = currentAccelerate;
     }
 }

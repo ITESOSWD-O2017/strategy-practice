@@ -1,14 +1,20 @@
 package com.iteso.nintendo;
 
+import com.iteso.nintendo.behavior.FastAccelerate;
+import com.iteso.nintendo.items.ShellPower;
+import com.iteso.nintendo.items.StarPower;
+import com.iteso.nintendo.items.TunderPower;
+
 /**
  * Created by rvillalobos on 3/3/16.
  */
 public class Mario extends NintendoCharacter{
 
     public Mario(){
-        setCurrentPower("normal");
+        setCurrentPower(new ShellPower());
         setName("Mario");
         setSpeed("normal");
+        setCurrentAccelerate(new FastAccelerate());
     }
 
     @Override
@@ -28,34 +34,34 @@ public class Mario extends NintendoCharacter{
 
     @Override
     public String performBButtonAction() {
-        if (getCurrentPower() == "fire")
-            return "fireball";
-        else if (getCurrentPower() == "invincibility")
-            return "dash";
-        else if (getCurrentPower() == "normal")
-            return "nothing";
+        if (getCurrentPower() instanceof ShellPower)
+            return "shell";
+        else if (getCurrentPower() instanceof StarPower)
+            return "star";
+        else if (getCurrentPower() instanceof TunderPower)
+            return "tunder";
         else
             return "error";
     }
 
     @Override
     public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
+        if (getCurrentPower() != null) {
             return;
         }
 
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
+        else if(powerItem.toLowerCase() == "shell"){
+            setCurrentPower(new ShellPower());
         }
         else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
+            setCurrentPower(new StarPower());
             setSpeed("fast");
         }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
+        else if(powerItem.toLowerCase() == "tunder"){
+            setCurrentPower(new TunderPower());
             setSpeed("normal");
         }
         else
-            setCurrentPower("error");
+            setCurrentPower(null);
     }
 }
