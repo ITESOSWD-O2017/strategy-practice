@@ -1,9 +1,11 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.characterss;
+
+import com.iteso.nintendo.NintendoCharacter;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Luigi extends NintendoCharacter{
+public class Luigi extends NintendoCharacter {
 
     public Luigi(){
         setCurrentPower("normal");
