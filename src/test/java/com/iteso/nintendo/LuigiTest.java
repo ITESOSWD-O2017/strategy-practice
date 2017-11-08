@@ -1,5 +1,6 @@
 package com.iteso.nintendo;
 
+import com.iteso.Luigi;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,14 +1,16 @@
 package com.iteso.nintendo;
 
+import com.iteso.behaviors.implementations.NormalPower;
+import com.iteso.behaviors.implementations.NormalSpeed;
+
+
 /**
  * Created by rvillalobos on 3/3/16.
  */
 public class Mario extends NintendoCharacter{
 
     public Mario(){
-        setCurrentPower("normal");
         setName("Mario");
-        setSpeed("normal");
     }
 
     @Override
@@ -28,34 +30,23 @@ public class Mario extends NintendoCharacter{
 
     @Override
     public String performBButtonAction() {
-        if (getCurrentPower() == "fire")
+        if (currentPower.getPower() == "fire")
             return "fireball";
-        else if (getCurrentPower() == "invincibility")
+        else if (currentPower.getPower() == "invincibility")
             return "dash";
-        else if (getCurrentPower() == "normal")
+        else if (currentPower.getPower() == "normal")
             return "nothing";
         else
             return "error";
     }
 
-    @Override
-    public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
-            return;
-        }
-
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
-        }
-        else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
-            setSpeed("fast");
-        }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
-            setSpeed("normal");
-        }
-        else
-            setCurrentPower("error");
+    public void setPower() {
+        currentPower = new NormalPower();
     }
+
+    public void setAccelerate() {
+        currentAccelerate = new NormalSpeed();
+    }
+
+
 }
