@@ -1,14 +1,23 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.Characters;
+
+
+import com.iteso.nintendo.Characters.NintendoCharacter;
+import com.iteso.nintendo.Interfaces.*;
+import com.iteso.nintendo.Beheaviors.*;
+import com.iteso.nintendo.Beheaviors.RedShell;
+
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Luigi extends NintendoCharacter{
+public class Mario extends NintendoCharacter {
 
-    public Luigi(){
+    public Mario(){
         setCurrentPower("normal");
-        setName("Luigi ");
+        setName("Mario");
         setSpeed("normal");
+        setPowerr(new RedShell());
+        setAcelerar(new Toretto());
     }
 
     @Override

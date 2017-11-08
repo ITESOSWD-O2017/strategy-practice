@@ -1,14 +1,22 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.Characters;
+
+import com.iteso.nintendo.Beheaviors.ChompChomp;
+import com.iteso.nintendo.Beheaviors.Slow;
+import com.iteso.nintendo.Characters.NintendoCharacter;
+import com.iteso.nintendo.Interfaces.*;
+
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Mario extends NintendoCharacter{
+public class Luigi extends NintendoCharacter {
 
-    public Mario(){
+    public Luigi(){
         setCurrentPower("normal");
-        setName("Mario");
+        setName("Luigi ");
         setSpeed("normal");
+        setPower(new ChompChomp());
+        setAcelerar(new Slow());
     }
 
     @Override
