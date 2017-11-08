@@ -37,22 +37,23 @@ public class Luigi extends NintendoCharacter{
         else
             return "error";
     }
-
-    @Override
-    public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
+    public void setPower(iPower powerItem){
+        if(getCurrentPower().toLowerCase()!= "normal"){
             return;
         }
 
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
+        else if(powerItem.getPower().toLowerCase() == "flower"){
+            powerItem.preparePower();
+            setCurrentPower(powerItem.releasePower());
         }
-        else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
+        else if(powerItem.getPower().toLowerCase() == "star"){
+            powerItem.preparePower();
+            setCurrentPower(powerItem.releasePower());
             setSpeed("fast");
         }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
+        else if(powerItem.getPower().toLowerCase() == "clear power"){
+            powerItem.preparePower();
+            setCurrentPower(powerItem.releasePower());
             setSpeed("normal");
         }
         else

@@ -1,9 +1,12 @@
 package com.iteso.nintendo;
 
+import com.iteso.nintendo.com.iteso.impl.FastAccel;
+import com.iteso.nintendo.com.iteso.impl.NormalAccel;
+
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Mario extends NintendoCharacter{
+public class Mario extends NintendoCharacter {
 
     public Mario(){
         setCurrentPower("normal");
@@ -13,12 +16,22 @@ public class Mario extends NintendoCharacter{
 
     @Override
     public String performXButtonAction() {
-        return null;
+        decelerate();
+        if (getAccelType()){
+            setAcceleration(new FastAccel());
+        }
+        else {
+            setAcceleration(new NormalAccel());
+        }
+
+        return "I´m decelerating now I am"+ getSpeed();
     }
 
     @Override
     public String performYButtonAction() {
-        return null;
+        accelerate();
+        setAcceleration(new NormalAccel());
+        return "I´m accelerating now I am "+ getSpeed();
     }
 
     @Override
@@ -37,22 +50,26 @@ public class Mario extends NintendoCharacter{
         else
             return "error";
     }
-
     @Override
-    public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
+    public void setPower(iPower powerItem){
+        if(getCurrentPower().toLowerCase()!= "normal"){
             return;
         }
 
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
+        else if(powerItem.getPower().toLowerCase() == "flower"){
+            powerItem.preparePower();
+            setCurrentPower(powerItem.releasePower());
         }
-        else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
-            setSpeed("fast");
+        else if(powerItem.getPower().toLowerCase() == "star"){
+            powerItem.preparePower();
+            setCurrentPower(powerItem.releasePower());
+            setAccelerationType(true);
+            performYButtonAction();
         }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
+        else if(powerItem.getPower().toLowerCase() == "clear power"){
+            powerItem.preparePower();
+            setCurrentPower(powerItem.releasePower());
+            setAccelerationType(true);
             setSpeed("normal");
         }
         else
