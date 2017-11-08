@@ -1,13 +1,13 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.characters;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public class Mario extends NintendoCharacter{
+public class Luigi extends NintendoCharacter {
 
-    public Mario(){
+    public Luigi(){
         setCurrentPower("normal");
-        setName("Mario");
+        setName("Luigi ");
         setSpeed("normal");
     }
 
