@@ -3,11 +3,18 @@ package com.iteso.nintendo.implementations;
 import com.iteso.nintendo.behavior.iPower;
 
 public class Star implements iPower {
-    public void Activate() {
+    public String Activate() {
 
+        return "Star";
     }
 
-    public void Throw() {
+    public String frontThrow() {
 
+        return "Can't Throw";
+    }
+
+    public String backThrow() {
+
+        return "Can't Throw";
     }
 }

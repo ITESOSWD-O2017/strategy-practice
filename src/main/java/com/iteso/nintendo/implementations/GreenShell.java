@@ -3,11 +3,18 @@ package com.iteso.nintendo.implementations;
 import com.iteso.nintendo.behavior.iPower;
 
 public class GreenShell implements iPower {
-    public void Activate() {
+    public String Activate() {
 
+        return "Green Shell";
     }
 
-    public void Throw() {
+    public String frontThrow() {
 
+        return "Go Straight";
+    }
+
+    public String backThrow() {
+
+        return "Go Straight";
     }
 }

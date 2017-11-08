@@ -3,11 +3,18 @@ package com.iteso.nintendo.implementations;
 import com.iteso.nintendo.behavior.iPower;
 
 public class BlueShell implements iPower {
-    public void Activate() {
+    public String Activate() {
 
+        return "Blue Shell";
     }
 
-    public void Throw() {
+    public String frontThrow() {
 
+        return "Chase 1st place";
+    }
+
+    public String backThrow() {
+
+        return "Can't Throw Backwards";
     }
 }
