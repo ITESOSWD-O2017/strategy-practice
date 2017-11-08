@@ -1,12 +1,8 @@
 package com.iteso.nintendo;
 
-public abstract class iAccelerate {
+public interface Iaccelerate {
 
-    private String description = null;
+    int speedPercentage = 0;
 
-    public String getDescription(){ return description; }
-
-    public void setDescription(String description){ this.description = description; }
-
-    public abstract void speed();
+    void speed();
 }

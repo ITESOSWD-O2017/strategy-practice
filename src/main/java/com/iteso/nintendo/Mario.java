@@ -1,24 +1,29 @@
 package com.iteso.nintendo;
 
+import com.iteso.nintendo.accelerate.implementations.Fast;
+import com.iteso.nintendo.powerup.implementations.Normal;
+import com.iteso.nintendo.powerup.implementations.Star;
+
 /**
  * Created by rvillalobos on 3/3/16.
  */
 public class Mario extends NintendoCharacter{
 
     public Mario(){
-        setCurrentPower("normal");
+        setCurrentPower(new Normal());
         setName("Mario");
-        setSpeed("normal");
+        setSpeed(new com.iteso.nintendo.accelerate.implementations.Normal());
     }
 
     @Override
     public String performXButtonAction() {
-        return null;
+        return "Dash";
     }
 
     @Override
     public String performYButtonAction() {
-        return null;
+        getCurrentPower().backThrow();
+        return "Back Throw";
     }
 
     @Override
@@ -28,34 +33,22 @@ public class Mario extends NintendoCharacter{
 
     @Override
     public String performBButtonAction() {
-        if (getCurrentPower() == "fire")
-            return "fireball";
-        else if (getCurrentPower() == "invincibility")
-            return "dash";
-        else if (getCurrentPower() == "normal")
-            return "nothing";
-        else
-            return "error";
+        getCurrentPower().frontThrow();
+        return "Front Throw";
     }
 
     @Override
-    public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
+    public void setPower(Ipower powerItem) {
+        if (getCurrentPower().getItems() > 0) {
             return;
         }
+        else if(powerItem.getClass() == Star.class){
+            setSpeed(new Fast());
+        }
+        else if(powerItem.getClass() == Normal.class){
+            setSpeed(new com.iteso.nintendo.accelerate.implementations.Normal());
+        }
 
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
-        }
-        else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
-            setSpeed("fast");
-        }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
-            setSpeed("normal");
-        }
-        else
-            setCurrentPower("error");
+        setCurrentPower(powerItem);
     }
 }
