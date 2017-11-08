@@ -1,6 +1,9 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.characters;
 
 import com.iteso.nintendo.behavior.iAccelerate;
+import com.iteso.nintendo.items.ShellPower;
+import com.iteso.nintendo.items.StarPower;
+import com.iteso.nintendo.items.TunderPower;
 import com.iteso.nintendo.items.iPower;
 
 /**
@@ -32,16 +35,25 @@ public abstract class NintendoCharacter {
     public abstract String performXButtonAction();
     public abstract String performYButtonAction();
     public abstract String performAButtonAction();
-    public abstract String performBButtonAction();
-
-    public abstract void setPower(String powerItem);
+    public  String performBButtonAction() {
+        {
+            if (getCurrentPower() instanceof ShellPower)
+                return "shell";
+            else if (getCurrentPower() instanceof StarPower)
+                return "star";
+            else if (getCurrentPower() instanceof TunderPower)
+                return "tunder";
+            else
+                return "error";
+        }
+    };
 
 
     public iPower getCurrentPower() {
         return currentPower;
     }
 
-    public void setCurrentPower(iPower currentPower) {
+    public void setPower(iPower currentPower) {
         this.currentPower = currentPower;
     }
 

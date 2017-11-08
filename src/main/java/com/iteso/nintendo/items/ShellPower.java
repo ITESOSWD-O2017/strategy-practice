@@ -1,6 +1,7 @@
 package com.iteso.nintendo.items;
 
 public class ShellPower implements iPower {
+
     public void activatePower() {
 
     }
