@@ -1,4 +1,7 @@
-package com.iteso.nintendo;
+package com.iteso.nintendo.Nintendo;
+import com.iteso.nintendo.Implementations.*;
+import com.iteso.nintendo.Interfaces.iPower;
+import com.iteso.nintendo.Interfaces.iAccelerate;
 
 /**
  * Created by rvillalobos on 3/3/16.
@@ -9,6 +12,8 @@ public class Luigi extends NintendoCharacter{
         setCurrentPower("normal");
         setName("Luigi ");
         setSpeed("normal");
+        setCharacterAccelerate(new AccelerateMax());
+        setCharacterPower(new powerBanana());
     }
 
     @Override
@@ -39,23 +44,11 @@ public class Luigi extends NintendoCharacter{
     }
 
     @Override
-    public void setPower(String powerItem) {
-        if (getCurrentPower().toLowerCase() != "normal") {
-            return;
-        }
+    public void setPower(iPower characterPower) {
+      characterPower = new powerBanana();
+    }
 
-        else if(powerItem.toLowerCase() == "flower"){
-            setCurrentPower("fire");
-        }
-        else if(powerItem.toLowerCase() == "star"){
-            setCurrentPower("invincibility");
-            setSpeed("fast");
-        }
-        else if(powerItem.toLowerCase() == "clear power"){
-            setCurrentPower("normal");
-            setSpeed("normal");
-        }
-        else
-            setCurrentPower("error");
+    public void setAcceleration(iAccelerate accelerationType) {
+        accelerationType = new AccelerateMin();
     }
 }
