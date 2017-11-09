@@ -1,4 +1,5 @@
-package com.iteso.nintendo.characters;
+package com.iteso.nintendo.Characters;
+import com.iteso.nintendo.behaviour.iPower;
 
 /**
  * Created by rvillalobos on 3/3/16.
@@ -39,7 +40,7 @@ public class Luigi extends NintendoCharacter {
     }
 
     @Override
-    public void setPower(String powerItem) {
+    public void setPower(iPower powerItem) {
         if (getCurrentPower().toLowerCase() != "normal") {
             return;
         }

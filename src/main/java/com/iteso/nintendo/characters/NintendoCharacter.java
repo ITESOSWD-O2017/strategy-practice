@@ -4,9 +4,9 @@ package com.iteso.nintendo.characters;
  * Created by rvillalobos on 3/3/16.
  */
 public abstract class NintendoCharacter {
-      private String speed = null;
-      private String name = null;
-      private String currentPower = null;
+    private String speed = null;
+    private String name = null;
+//    private String currentPower = null;
 
 
     public String getSpeed() {
@@ -29,15 +29,11 @@ public abstract class NintendoCharacter {
     public abstract String performYButtonAction();
     public abstract String performAButtonAction();
     public abstract String performBButtonAction();
-
     public abstract void setPower(String powerItem);
 
 
-    public String getCurrentPower() {
+   /* public String getCurrentPower() {
         return currentPower;
-    }
+    }*/
 
-    public void setCurrentPower(String currentPower) {
-        this.currentPower = currentPower;
-    }
 }
