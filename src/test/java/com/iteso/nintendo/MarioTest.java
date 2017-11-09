@@ -1,6 +1,9 @@
 package com.iteso.nintendo;
-
-import com.iteso.nintendo.Mario;
+import com.iteso.behaviors.IAccelerate;
+import com.iteso.behaviors.IPower;
+import com.iteso.behaviors.implementations.BananaPower;
+import com.iteso.behaviors.implementations.FlowerPower;
+import com.iteso.behaviors.implementations.NormalPower;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -10,6 +13,8 @@ import static org.junit.Assert.assertEquals;
  */
 public class MarioTest {
     Mario mario;
+    IPower nPower = new NormalPower();
+    IPower nullPower;
 
     @Before
     public void setUp(){
@@ -17,58 +22,36 @@ public class MarioTest {
     }
 
     @Test
-    public void testPowerWhenMarioTakesAFlower(){
-        mario.setPower("flower");
-
-        assertEquals("fire",mario.getCurrentPower());
+    public void testPowerNormal(){
+        mario.setPower(nPower);
+        assertEquals("Normal",mario.getPower());
     }
 
     @Test
-    public void testBActionWhenMarioTakesAFlower(){
-        mario.setPower("flower");
-
-        assertEquals("fireball",mario.performBButtonAction());
+    public void testBButton(){
+        mario.setPower(nPower);
+        assertEquals("I'm going at normal speed!!!",mario.performBButtonAction());
     }
 
     @Test
-    public void testPowerWhenMarioTakesAStar(){
-        mario.setPower("star");
-
-        assertEquals("invincibility",mario.getCurrentPower());
+    public void testAButton(){
+        assertEquals("jump",mario.performAButtonAction());
     }
 
     @Test
-    public void testBActionWhenMarioTakesAStar(){
-        mario.setPower("star");
-
-        assertEquals("dash",mario.performBButtonAction());
+    public void testYButton(){
+        assertEquals("I'm slowing down!!",mario.performYButtonAction());
     }
 
     @Test
-    public void testPowerWhenMarioIsNormal(){
-        mario.setPower("clear power");
-
-        assertEquals("normal",mario.getCurrentPower());
+    public void testXButton(){
+        mario.setPower(nPower);
+        assertEquals("I'll do nothing :s",mario.performXButtonAction());
     }
 
-    @Test
-    public void testBActionWhenMarioIsNormal(){
-        mario.setPower("clear power");
-
-        assertEquals("nothing",mario.performBButtonAction());
-    }
     @Test
     public void testPowerWhenError(){
-        mario.setPower("invalid");
-
-        assertEquals("error",mario.getCurrentPower());
-    }
-
-    @Test
-    public void testBActionWhenError(){
-        mario.setPower("invalid");
-
-        assertEquals("error",mario.performBButtonAction());
+        assertEquals("Please assign a power",mario.setPower(nullPower));
     }
 
 }

@@ -1,25 +1,23 @@
 package com.iteso.behaviors.implementations;
-
-import com.iteso.behaviors.iPower;
-
+import com.iteso.behaviors.IPower;
 /**
  * Flower power.
  */
-public class FlowerPower implements iPower {
-
-    public String getPower(){
+public class FlowerPower extends IPower {
+    @Override
+    public final String getPower() {
         return "Flower";
     }
-
-    public String catchPower() {
+    @Override
+    public final String catchPower() {
         return "I Cached a flower!!!";
     }
-
-    public String preparePower(){
+    @Override
+    public final String preparePower() {
         return "I'm preparing a flower!!";
     }
-
-    public String usePower(){
+    @Override
+    public final String usePower() {
         return "I'm shooting fireballs!!!!";
     }
 }

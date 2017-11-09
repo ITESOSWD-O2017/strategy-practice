@@ -1,29 +1,26 @@
 package com.iteso.behaviors.implementations;
-
-import com.iteso.behaviors.iPower;
-
+import com.iteso.behaviors.IPower;
 /**
  * Banana power.
  */
-public class BananaPower implements iPower {
+public class BananaPower extends IPower {
 
     @Override
-    public String getPower(){
+    public final String getPower() {
         return "Banana";
     }
-
     @Override
-    public String catchPower() {
-        return "I Catched a banana!!!";
+    public final String catchPower() {
+        return "I Cached a banana!!!";
     }
 
     @Override
-    public String preparePower(){
+    public final String preparePower() {
         return "I'm preparing a banana!!";
     }
 
     @Override
-    public String usePower(){
-        return "I'll make them slidee!!!!";
+    public final String usePower() {
+        return "I'll make them slide!!!!";
     }
 }

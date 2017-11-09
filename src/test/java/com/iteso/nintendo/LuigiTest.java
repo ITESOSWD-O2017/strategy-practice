@@ -1,9 +1,11 @@
 package com.iteso.nintendo;
-
-import com.iteso.Luigi;
+import com.iteso.behaviors.IAccelerate;
+import com.iteso.behaviors.IPower;
+import com.iteso.behaviors.implementations.BananaPower;
+import com.iteso.behaviors.implementations.FlowerPower;
+import com.iteso.behaviors.implementations.NormalPower;
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -11,6 +13,9 @@ import static org.junit.Assert.assertEquals;
  */
 public class LuigiTest {
     Luigi luigi;
+    IPower nPower = new NormalPower();
+    IAccelerate accelerate;
+    IPower nullPower;
 
     @Before
     public void setUp(){
@@ -18,58 +23,35 @@ public class LuigiTest {
     }
 
     @Test
-    public void testPowerWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
-
-        assertEquals("fire", luigi.getCurrentPower());
+    public void testPower(){
+        luigi.setPower(nPower);
+        assertEquals("Normal",luigi.getPower());
     }
 
     @Test
-    public void testBActionWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
-
-        assertEquals("fireball", luigi.performBButtonAction());
+    public void testBButton(){
+        assertEquals("I'm going at normal speed!!!",luigi.performBButtonAction());
     }
 
     @Test
-    public void testPowerWhenLuigiTakesAStar(){
-        luigi.setPower("star");
-
-        assertEquals("invincibility", luigi.getCurrentPower());
+    public void testAButton(){
+        assertEquals("jump",luigi.performAButtonAction());
     }
 
     @Test
-    public void testBActionWhenLuigiTakesAStar(){
-        luigi.setPower("star");
-
-        assertEquals("dash", luigi.performBButtonAction());
+    public void testYButton(){
+        assertEquals("I'm slowing down!!",luigi.performYButtonAction());
     }
 
     @Test
-    public void testPowerWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
-
-        assertEquals("normal", luigi.getCurrentPower());
+    public void testXButton(){
+        luigi.setPower(nPower);
+        assertEquals("I'll do nothing :s",luigi.performXButtonAction());
     }
 
-    @Test
-    public void testBActionWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
-
-        assertEquals("nothing", luigi.performBButtonAction());
-    }
     @Test
     public void testPowerWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.getCurrentPower());
-    }
-
-    @Test
-    public void testBActionWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.performBButtonAction());
+        assertEquals("Please assign a power",luigi.setPower(nullPower));
     }
 
 }

@@ -1,24 +1,24 @@
 package com.iteso.behaviors.implementations;
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IPower;
 
 /**
  * Normal power.
  */
-public class NormalPower implements iPower {
-
-    public String getPower(){
+public class NormalPower extends IPower {
+    @Override
+    public final String getPower() {
         return "Normal";
     }
-
-    public String catchPower() {
+    @Override
+    public final String catchPower() {
         return "I did'nt catch anything :(";
     }
-
-    public String preparePower(){
+    @Override
+    public final String preparePower() {
         return "I don´t have power to prepare!";
     }
-
-    public String usePower(){
+    @Override
+    public final String usePower() {
         return "I'll do nothing :s";
     }
 }
