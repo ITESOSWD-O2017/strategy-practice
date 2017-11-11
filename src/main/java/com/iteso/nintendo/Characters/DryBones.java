@@ -1,24 +1,18 @@
 package com.iteso.nintendo.Characters;
 
 import com.iteso.nintendo.Beheaviors.ChompChomp;
-import com.iteso.nintendo.Beheaviors.Slow;
-import com.iteso.nintendo.Characters.NintendoCharacter;
-import com.iteso.nintendo.Interfaces.*;
+import com.iteso.nintendo.Beheaviors.Toretto;
 
-
-/**
- * Created by rvillalobos on 3/3/16.
- */
-public class Luigi extends NintendoCharacter {
-
-    public Luigi(){
+public class DryBones extends NintendoCharacter {
+    public DryBones(){
         setCurrentPower("normal");
-        setName("Luigi ");
+        setName("Huesitos ");
         setSpeed("normal");
         setPowerr(new ChompChomp());
-        setAcelerar(new Slow());
-    }
+        setAcelerar(new Toretto());
+        
 
+}
     @Override
     public String performXButtonAction() {
         return null;

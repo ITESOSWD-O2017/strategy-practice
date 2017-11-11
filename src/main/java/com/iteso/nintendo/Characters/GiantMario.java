@@ -1,22 +1,18 @@
 package com.iteso.nintendo.Characters;
 
-import com.iteso.nintendo.Beheaviors.ChompChomp;
-import com.iteso.nintendo.Beheaviors.Slow;
+import com.iteso.nintendo.Beheaviors.Fast;
 import com.iteso.nintendo.Characters.NintendoCharacter;
 import com.iteso.nintendo.Interfaces.*;
+import com.iteso.nintendo.Beheaviors.GreenShell;
 
-
-/**
- * Created by rvillalobos on 3/3/16.
- */
-public class Luigi extends NintendoCharacter {
-
-    public Luigi(){
+public class GiantMario extends NintendoCharacter {
+    public GiantMario() {
         setCurrentPower("normal");
-        setName("Luigi ");
+        setName("Giant Mario ");
         setSpeed("normal");
-        setPowerr(new ChompChomp());
-        setAcelerar(new Slow());
+        setPowerr(new GreenShell());
+        setAcelerar(new Fast());
+
     }
 
     @Override

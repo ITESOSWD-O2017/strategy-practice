@@ -1,23 +1,19 @@
 package com.iteso.nintendo.Characters;
 
-import com.iteso.nintendo.Beheaviors.ChompChomp;
+import com.iteso.nintendo.Beheaviors.RedShell;
 import com.iteso.nintendo.Beheaviors.Slow;
 import com.iteso.nintendo.Characters.NintendoCharacter;
 import com.iteso.nintendo.Interfaces.*;
 
-
-/**
- * Created by rvillalobos on 3/3/16.
- */
-public class Luigi extends NintendoCharacter {
-
-    public Luigi(){
+public class Yoshi extends NintendoCharacter {
+    public Yoshi(){
         setCurrentPower("normal");
-        setName("Luigi ");
+        setName("Mario");
         setSpeed("normal");
-        setPowerr(new ChompChomp());
+        setPowerr(new RedShell());
         setAcelerar(new Slow());
-    }
+
+}
 
     @Override
     public String performXButtonAction() {
