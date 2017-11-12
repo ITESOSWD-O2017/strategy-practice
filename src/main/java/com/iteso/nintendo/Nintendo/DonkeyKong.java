@@ -3,14 +3,11 @@ import com.iteso.nintendo.Implementations.*;
 import com.iteso.nintendo.Interfaces.iPower;
 import com.iteso.nintendo.Interfaces.iAccelerate;
 
-/**
- * Created by rvillalobos on 3/3/16.
- */
-public class Luigi extends NintendoCharacter{
+public class DonkeyKong extends NintendoCharacter{
 
-    public Luigi(){
+    public DonkeyKong(){
         setCurrentPower("normal");
-        setName("Luigi");
+        setName("Donkey Kong");
         setSpeed("normal");
         setCharacterAccelerate(new AccelerateMax());
         setCharacterPower(new powerBanana());
@@ -18,20 +15,17 @@ public class Luigi extends NintendoCharacter{
 
     @Override
     public String performXButtonAction() {
-
-        return null;
+        return "Lets go";
     }
 
     @Override
     public String performYButtonAction() {
-
-        return "Im racing!!";
+        return "Im running fast";
     }
 
     @Override
     public String performAButtonAction() {
-
-        return "jump";
+        return "Im slowing down";
     }
 
     @Override
@@ -41,19 +35,17 @@ public class Luigi extends NintendoCharacter{
         else if (getCurrentPower() == "invincibility")
             return "dash";
         else if (getCurrentPower() == "normal")
-            return "nothing";
+            return "Ja ja loser!";
         else
             return "error";
     }
 
     @Override
     public void setPower(iPower characterPower) {
-
         characterPower = new powerBanana();
     }
 
     public void setAcceleration(iAccelerate accelerationType) {
-
         accelerationType = new AccelerateMin();
     }
 }

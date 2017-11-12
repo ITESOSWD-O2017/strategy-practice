@@ -18,17 +18,17 @@ public class Mario extends NintendoCharacter{
 
     @Override
     public String performXButtonAction() {
-        return null;
+        return "Im in the race mates!";
     }
 
     @Override
     public String performYButtonAction() {
-        return null;
+        return "Lets do it";
     }
 
     @Override
     public String performAButtonAction() {
-        return "jump";
+        return "slide";
     }
 
     @Override

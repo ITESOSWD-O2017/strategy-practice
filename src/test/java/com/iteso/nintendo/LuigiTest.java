@@ -3,7 +3,9 @@ package com.iteso.nintendo;
 import com.iteso.nintendo.Nintendo.Luigi;
 import org.junit.Before;
 import org.junit.Test;
-
+import com.iteso.nintendo.Implementations.*;
+import com.iteso.nintendo.Interfaces.iPower;
+import com.iteso.nintendo.Interfaces.iAccelerate;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -14,62 +16,33 @@ public class LuigiTest {
 
     @Before
     public void setUp(){
+
         luigi = new Luigi();
     }
 
     @Test
-    public void testPowerWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
-
-        assertEquals("fire", luigi.getCurrentPower());
+    public void getName() throws Exception {
+        assertEquals("Luigi",luigi.getName());
     }
 
     @Test
-    public void testBActionWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
-
-        assertEquals("fireball", luigi.performBButtonAction());
+    public void performXButtonAction() throws Exception {
+        assertEquals(null,luigi.performXButtonAction());
     }
 
     @Test
-    public void testPowerWhenLuigiTakesAStar(){
-        luigi.setPower("star");
-
-        assertEquals("invincibility", luigi.getCurrentPower());
+    public void performYButtonAction() throws Exception {
+        assertEquals("Im racing!!",luigi.performYButtonAction());
     }
 
     @Test
-    public void testBActionWhenLuigiTakesAStar(){
-        luigi.setPower("star");
-
-        assertEquals("dash", luigi.performBButtonAction());
+    public void performAButtonAction() throws Exception {
+        assertEquals("jump",luigi.performAButtonAction());
     }
 
     @Test
-    public void testPowerWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
-
-        assertEquals("normal", luigi.getCurrentPower());
-    }
-
-    @Test
-    public void testBActionWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
-
-        assertEquals("nothing", luigi.performBButtonAction());
-    }
-    @Test
-    public void testPowerWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.getCurrentPower());
-    }
-
-    @Test
-    public void testBActionWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.performBButtonAction());
+    public void performBButtonAction() throws Exception {
+        assertEquals("nothing",luigi.performBButtonAction());
     }
 
 }
