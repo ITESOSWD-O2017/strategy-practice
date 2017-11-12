@@ -1,34 +1,35 @@
 package com.iteso.nintendo;
 
-
-import com.iteso.nintendo.Imple.*;
-import com.iteso.nintendo.Interfaz.*;
+import com.iteso.nintendo.Imple.BlueShell;
+import com.iteso.nintendo.Imple.Fast;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ *
  */
-public class Mario extends NintendoCharacter{
-
-    public Mario(){
+public class Mario extends NintendoCharacter {
+    /**
+     *
+     */
+    public Mario() {
         setCurrentPower("normal");
         setName("Mario");
         setSpeed("normal");
         setAccelerate(new Fast());
-        setPoder(new Flower());
+        setPoder(new BlueShell());
     }
 
     @Override
-    public String performXButtonAction() {
+    public final String performXButtonAction() {
         return null;
     }
 
     @Override
-    public String performYButtonAction() {
+    public final String performYButtonAction() {
         return null;
     }
 
     @Override
-    public String performAButtonAction() {
+    public final String performAButtonAction() {
         return "jump";
     }
 

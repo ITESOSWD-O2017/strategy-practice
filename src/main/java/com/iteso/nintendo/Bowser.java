@@ -1,22 +1,23 @@
 package com.iteso.nintendo;
 
-import com.iteso.nintendo.Imple.Shell;
-import com.iteso.nintendo.Imple.SlowAF;
+import com.iteso.nintendo.Imple.Fast;
+import com.iteso.nintendo.Imple.Star;
 
 /**
  *
  */
-public class Luigi extends NintendoCharacter {
+public class Bowser extends NintendoCharacter {
     /**
      *
      */
-    public Luigi() {
+    public Bowser() {
         setCurrentPower("normal");
-        setName("Luigi ");
-        setSpeed("normal");
-        setAccelerate(new SlowAF());
-        setPoder(new Shell());
+        setName("Bowser");
+        setSpeed("fast");
+        setAccelerate(new Fast());
+        setPoder(new Star());
     }
+
     @Override
     public final String performXButtonAction() {
         return null;

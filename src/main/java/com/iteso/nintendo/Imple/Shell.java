@@ -1,18 +1,26 @@
 package com.iteso.nintendo.Imple;
 
-import com.iteso.nintendo.Interfaz.iPower;
-
-public class Shell implements iPower {
-
-    public String name() {
+import com.iteso.nintendo.Interfaz.Ipower;
+/**
+ *
+ */
+public class Shell implements Ipower {
+    /**
+     *@return ok
+     */
+    public final String name() {
         return "Shell";
     }
-
-    public String icon() {
+    /**
+     *@return ok
+     */
+    public final String icon() {
         return "Shell.png";
     }
-
-    public String desc() {
+    /**
+     *@return ok
+     */
+    public final String desc() {
         return "Lanzar conchas";
     }
 }

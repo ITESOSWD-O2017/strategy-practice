@@ -1,18 +1,26 @@
 package com.iteso.nintendo.Imple;
 
-import com.iteso.nintendo.Interfaz.iPower;
-
-public class Star implements iPower {
-
-    public String name() {
+import com.iteso.nintendo.Interfaz.Ipower;
+/**
+ *
+ */
+public class Star implements Ipower {
+    /**
+     *@return ok
+     */
+    public final String name() {
         return "Star";
     }
-
-    public String icon() {
+    /**
+     *@return ok
+     */
+    public final String icon() {
         return "Star.png";
     }
-
-    public String desc() {
+    /**
+     *@return ok
+     */
+    public final String desc() {
         return "Invulnerabilidad alv";
     }
 }

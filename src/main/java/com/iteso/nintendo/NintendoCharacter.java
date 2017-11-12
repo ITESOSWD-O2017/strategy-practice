@@ -1,69 +1,119 @@
 package com.iteso.nintendo;
-
-import com.iteso.nintendo.Interfaz.iAccelerate;
-import com.iteso.nintendo.Interfaz.iPower;
-
+import com.iteso.nintendo.Interfaz.Iaccelerate;
+import com.iteso.nintendo.Interfaz.Ipower;
 /**
- * Created by rvillalobos on 3/3/16.
+ *
  */
 public abstract class NintendoCharacter {
+    /**
+     *
+     */
       private String speed = null;
+    /**
+     *
+     */
       private String name = null;
+    /**
+     *
+     */
       private String currentPower = null;
-      private iPower poder = null;
-      private iAccelerate accelerate = null;
+    /**
+     *
+     */
+      private Ipower poder = null;
+    /**
+     *
+     */
+      private Iaccelerate accelerate = null;
 
-
-
-    public String getSpeed() {
+    /**
+     *@return ok
+     */
+    public final String getSpeed() {
         return speed;
     }
-
-    public void setSpeed(String speed) {
-        this.speed = speed;
+    /**
+     *@param speeds This is a parameter
+     */
+    public final void setSpeed(final String speeds) {
+        this.speed = speeds;
     }
-    public void setAcceleration(iAccelerate accelerationType) {
+    /**
+     *@param accelerationType This is a parameter
+     */
+    public final void setAcceleration(final Iaccelerate accelerationType) {
         setSpeed(accelerationType.accelerate());
     }
-
-    public String getName() {
+    /**
+     *@return ok
+     */
+    public final String getName() {
         return name;
     }
-
-    public void setName(String name) {
-        this.name = name;
+    /**
+     *@param names This is a parameter
+     */
+    public final void setName(final String names) {
+        this.name = names;
     }
-
+    /**
+     *@return ok
+     */
     public abstract String performXButtonAction();
+    /**
+     *@return ok
+     */
     public abstract String performYButtonAction();
+    /**
+     *@return ok
+     */
     public abstract String performAButtonAction();
-    public String performBButtonAction(){
+    /**
+     *@return ok
+     */
+    public final String performBButtonAction() {
        return currentPower;
     }
-    public void setPower(iPower powerItem) {
+    /**
+     *@param powerItem This is a parameter
+     */
+    public final void setPower(final Ipower powerItem) {
         setCurrentPower(powerItem.name());
     }
-
-    public String getCurrentPower() {
+    /**
+     *@return ok
+     */
+    public final String getCurrentPower() {
         return currentPower;
     }
-
-    public void setCurrentPower(String currentPower) {
-        this.currentPower = currentPower;
+    /**
+     *@param currentPowers This is a parameter
+     */
+    public final void setCurrentPower(final String currentPowers) {
+        this.currentPower = currentPowers;
     }
-    public iPower getPoder(){
+    /**
+     *@return ok
+     */
+    public final Ipower getPoder() {
         return poder;
     }
-
-    public void setPoder(iPower poder) {
-        this.poder = poder;
+    /**
+     *@param poders This is a parameter
+     */
+    public final void setPoder(final Ipower poders) {
+        this.poder = poders;
     }
-
-    public iAccelerate getAccelerate() {
+    /**
+     *@return ok
+     */
+    public final Iaccelerate getAccelerate() {
         return accelerate;
     }
-
-    public void setAccelerate(iAccelerate accelerate) {
-        this.accelerate = accelerate;
+    /**
+     *@param accelerates This is a parameter
+     */
+    public final void setAccelerate(final Iaccelerate accelerates) {
+        this.accelerate = accelerates;
     }
 }

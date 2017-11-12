@@ -1,17 +1,26 @@
 package com.iteso.nintendo.Imple;
 
-import com.iteso.nintendo.Interfaz.iAccelerate;
-
-public class Fast implements iAccelerate {
-    public String accelerate() {
+import com.iteso.nintendo.Interfaz.Iaccelerate;
+/**
+ *
+ */
+public class Fast implements Iaccelerate {
+    /**
+     *@return ok
+     */
+    public final String accelerate() {
         return "This nougat is fast 100%";
     }
-
-    public String slowdown() {
+    /**
+     *@return ok
+     */
+    public final String slowdown() {
         return "This nougat can brake 100%";
     }
-
-    public boolean canDrift() {
+    /**
+     *@return ok
+     */
+    public final boolean canDrift() {
         return true;
     }
 }

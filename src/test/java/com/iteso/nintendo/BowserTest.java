@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class LuigiTest {
+public class BowserTest {
     @Test
     public void performXButtonAction() throws Exception {
     }

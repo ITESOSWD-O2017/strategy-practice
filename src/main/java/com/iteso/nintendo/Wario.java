@@ -1,22 +1,24 @@
 package com.iteso.nintendo;
 
-import com.iteso.nintendo.Imple.Shell;
-import com.iteso.nintendo.Imple.SlowAF;
+
+import com.iteso.nintendo.Imple.AlmostFast;
+import com.iteso.nintendo.Imple.Flower;
 
 /**
- *
+ * Created by rvillalobos on 3/3/16.
  */
-public class Luigi extends NintendoCharacter {
+public class Wario extends NintendoCharacter {
     /**
      *
      */
-    public Luigi() {
+    public Wario() {
         setCurrentPower("normal");
-        setName("Luigi ");
+        setName("Wario");
         setSpeed("normal");
-        setAccelerate(new SlowAF());
-        setPoder(new Shell());
+        setAccelerate(new AlmostFast());
+        setPoder(new Flower());
     }
+
     @Override
     public final String performXButtonAction() {
         return null;

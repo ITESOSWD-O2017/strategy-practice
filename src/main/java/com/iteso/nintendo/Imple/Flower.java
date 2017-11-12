@@ -1,18 +1,26 @@
 package com.iteso.nintendo.Imple;
 
-import com.iteso.nintendo.Interfaz.iPower;
-
-public class Flower implements iPower {
-
-    public String name() {
+import com.iteso.nintendo.Interfaz.Ipower;
+/**
+ *
+ */
+public class Flower implements Ipower {
+    /**
+     *@return ok
+     */
+    public final String name() {
         return "Flower";
     }
-
-    public String icon() {
+    /**
+     *@return ok
+     */
+    public final String icon() {
         return "Flower.png";
     }
-
-    public String desc() {
+    /**
+     *@return ok
+     */
+    public final String desc() {
         return "Lanzar bolas de fuego alv";
     }
 }
