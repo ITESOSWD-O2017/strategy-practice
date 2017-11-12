@@ -1,18 +1,31 @@
 package com.iteso.behaviors.implementations;
-import com.iteso.behaviors.iAccelerate;
+import com.iteso.behaviors.Iaccelerate;
 
-
-public class SlowAcceleration implements iAccelerate {
-
-    public String startAccelerating() {
+/**
+ * Class Slow acceleration.
+ */
+public class SlowAcceleration implements Iaccelerate {
+    /**
+     *
+     * @return status.
+     */
+    public final String startAccelerating() {
         return "Here I go!";
     }
 
-    public String Acceleration() {
+    /**
+     *
+     * @return status.
+     */
+    public final String acceleration() {
         return "Slow acceleration!";
     }
 
-    public String slowDown() {
+    /**
+     *
+     * @return status.
+     */
+    public final String slowDown() {
         return "Slowing down!";
     }
 }

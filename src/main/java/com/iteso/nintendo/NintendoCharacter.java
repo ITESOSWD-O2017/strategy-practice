@@ -1,48 +1,119 @@
 package com.iteso.nintendo;
-import com.iteso.behaviors.iAccelerate;
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.Iaccelerate;
+import com.iteso.behaviors.IPower;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
 public abstract class NintendoCharacter {
-      private String name = null;
-      private String speed = null;
-      private String currentPower = null;
-      protected iAccelerate accelerateStatus;
-      protected iPower powerStatus;
+    /**
+     * Variable name.
+     */
+    private String name = null;
+    /**
+     * variable speed.
+     */
+    private String speed = null;
+    /**
+     * variable current power.
+     */
+    private String currentPower = null;
+    /**
+     * variable acceleration status.
+     */
+    private Iaccelerate accelerateStatus;
+    /**
+     * variable power status.
+     */
+    private IPower powerStatus;
 
-    public void setSpeed(String speed) {
+    /**
+     * set speed.
+     * @param speedd speed.
+     */
+    public final void setSpeed(final String speedd) {
         this.speed = speed;
     }
 
-    public String Acceleration() {
+    /**
+     * acceleration.
+     * @return acceleration.
+     */
+    public final String acceleration() {
         return accelerateStatus.acceleration();
     }
 
-    public String getName() {
+    /**
+     * character name.
+     * @return name.
+     */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    /**
+     * set name.
+     * @param namee name.
+     */
+    public final void setName(final String namee) {
         this.name = name;
     }
 
-    public abstract String performXButtonAction();
-    public abstract String performYButtonAction();
-    public abstract String performAButtonAction();
-    public abstract String performBButtonAction();
+    /**
+     *
+     * @param powerItem power.
+     */
+    public abstract void setPower(IPower powerItem);
 
-    public abstract void setPower(iPower powerItem);
-    public abstract void setAcceleration(iAccelerate acceleration);
+    /**
+     *
+     * @param acceleration acceleration.
+     */
+    public abstract void setAcceleration(Iaccelerate acceleration);
 
-
-    public iPower getCurrentPower() {
+    /**
+     * get status.
+     * @return power.
+     */
+    public final IPower getCurrentPower() {
         return powerStatus;
     }
 
-    public void setCurrentPower(String currentPower) {
+    /**
+     * currentPower.
+     * @param currentPowerr power.
+     */
+    public final void setCurrentPower(final String currentPowerr) {
         this.currentPower = currentPower;
+    }
+
+    /**
+     * Performing X action.
+     * @return power usage.
+     */
+    public final String performXButtonAction() {
+        return powerStatus.throwForward();
+    }
+    /**
+     * Performing Y action.
+     * @return deceleration.
+     */
+    public final String performYButtonAction() {
+        return accelerateStatus.slowDown();
+    }
+    /**
+     * Performing A action.
+     * @return jump.
+     */
+    public final String performAButtonAction() {
+        return "jump";
+    }
+    /**
+     * Performing B action.
+     * @return acceleration.
+     */
+    public final String performBButtonAction() {
+        return accelerateStatus.startAccelerating();
     }
 
 }

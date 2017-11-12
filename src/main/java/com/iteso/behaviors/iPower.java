@@ -1,9 +1,31 @@
 package com.iteso.behaviors;
 
-public interface iPower {
-    public String catchPower();
-    public String throwForward();
-    public String trhowBackwards();
-    public String retainPower();
+/**
+ * interface iPower.
+ */
+public interface IPower {
+    /**
+     *
+     * @return status.
+     */
+    String catchPower();
+
+    /**
+     *
+     * @return status.
+     */
+    String throwForward();
+
+    /**
+     *
+     * @return status.
+     */
+    String trhowBackwards();
+
+    /**
+     *
+     * @return power.
+     */
+    String retainPower();
 
 }

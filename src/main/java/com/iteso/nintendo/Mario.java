@@ -1,33 +1,44 @@
 package com.iteso.nintendo;
-import com.iteso.behaviors.implementations.*;
-import com.iteso.behaviors.iAccelerate;
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IPower;
+import com.iteso.behaviors.Iaccelerate;
+import com.iteso.behaviors.implementations.NormalAcceleration;
+import com.iteso.behaviors.implementations.NormalMode;
 /**
  * Created by rvillalobos on 3/3/16.
  */
-public abstract class Mario extends NintendoCharacter{
+public class Mario extends NintendoCharacter {
+    /**
+     *
+     * @param powerItem power.
+     */
+    public void setPower(final IPower powerItem) {
 
-    public Mario(){
+    }
+
+    /**
+     * acceleration.
+     * @param accelerationn acceleration.
+     */
+    public void setAcceleration(final Iaccelerate accelerationn) {
+
+    }
+
+    /**
+     * default constructor.
+     */
+    public Mario() {
         setName("Mario");
     }
 
-    @Override
-    public String performBButtonAction() {
-        if (powerStatus.catchPower() == "flower")
-            return "fireball";
-        else if (powerStatus.catchPower() == "shell")
-            return "shell";
-        else if (powerStatus.catchPower() == "normal")
-            return "nothing";
-        else
-            return "error";
-    }
+    /**
+     * setPower.
+     * @param powerItem poweritem.
+     */
+    private IPower power = new NormalMode();
 
-    public void setPower() {
-        powerStatus = new NormalMode();
-    }
-
-    public void setAcceleration(){
-        accelerateStatus = new NormalAcceleration();
-    }
+    /**
+     * acceleration.
+     * @param acceleration acceleration.
+     */
+    private Iaccelerate acceleration = new NormalAcceleration();
 }

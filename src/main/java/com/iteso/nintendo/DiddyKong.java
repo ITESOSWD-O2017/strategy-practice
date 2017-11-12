@@ -1,18 +1,19 @@
 package com.iteso.nintendo;
 import com.iteso.behaviors.IPower;
 import com.iteso.behaviors.Iaccelerate;
+import com.iteso.behaviors.implementations.MaximumAcceleration;
 import com.iteso.behaviors.implementations.NormalMode;
-import com.iteso.behaviors.implementations.NormalAcceleration;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Class Diddy Kong.
  */
-public class Luigi extends NintendoCharacter {
+public class DiddyKong extends NintendoCharacter {
     /**
      * default constructor.
-     */
-    public Luigi() {
-        setName("Luigi ");
+      */
+    public DiddyKong() {
+        setName("Diddy");
+        setCurrentPower("Shell");
     }
 
     /**
@@ -20,6 +21,12 @@ public class Luigi extends NintendoCharacter {
      * @param powerItem poweritem.
      */
     private IPower power = new NormalMode();
+
+    /**
+     * acceleration.
+     * @param acceleration acceleration.
+     */
+    private Iaccelerate acceleration = new MaximumAcceleration();
 
     /**
      *
@@ -36,10 +43,4 @@ public class Luigi extends NintendoCharacter {
     public void setAcceleration(final Iaccelerate accelerationn) {
 
     }
-
-    /**
-     * acceleration.
-     * @param accelerationn acceleration.
-     */
-    private Iaccelerate acceleration = new NormalAcceleration();
 }

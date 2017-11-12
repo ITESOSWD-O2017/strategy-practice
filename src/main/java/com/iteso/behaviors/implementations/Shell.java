@@ -1,22 +1,39 @@
 package com.iteso.behaviors.implementations;
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IPower;
 
-
-public class Shell implements iPower {
-
-    public String catchPower() {
+/**
+ * Class Shell.
+ */
+public class Shell implements IPower {
+    /**
+     *
+     * @return status.
+     */
+    public final String catchPower() {
         return "I have a shell!";
     }
 
-    public String throwForward() {
+    /**
+     *
+     * @return status.
+     */
+    public final String throwForward() {
         return "I will Knock you out!";
     }
 
-    public String trhowBackwards() {
+    /**
+     *
+     * @return status.
+     */
+    public final String trhowBackwards() {
         return "Shell power!";
     }
 
-    public String retainPower() {
+    /**
+     *
+     * @return status.
+     */
+    public final String retainPower() {
         return "Fear my shell!";
     }
 }

@@ -1,25 +1,31 @@
 package com.iteso.nintendo;
 import com.iteso.behaviors.IPower;
 import com.iteso.behaviors.Iaccelerate;
-import com.iteso.behaviors.implementations.NormalMode;
-import com.iteso.behaviors.implementations.NormalAcceleration;
+import com.iteso.behaviors.implementations.Banana;
+import com.iteso.behaviors.implementations.MaximumAcceleration;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Class Koopa.
  */
-public class Luigi extends NintendoCharacter {
+public class KoopaTroopa extends NintendoCharacter {
     /**
      * default constructor.
      */
-    public Luigi() {
-        setName("Luigi ");
+    public KoopaTroopa() {
+        setName("Koopa");
+        setCurrentPower("Banana");
     }
-
     /**
      * setPower.
      * @param powerItem poweritem.
      */
-    private IPower power = new NormalMode();
+    private IPower power = new Banana();
+
+    /**
+     * acceleration.
+     * @param acceleration acceleration.
+     */
+    private Iaccelerate acceleration = new MaximumAcceleration();
 
     /**
      *
@@ -36,10 +42,4 @@ public class Luigi extends NintendoCharacter {
     public void setAcceleration(final Iaccelerate accelerationn) {
 
     }
-
-    /**
-     * acceleration.
-     * @param accelerationn acceleration.
-     */
-    private Iaccelerate acceleration = new NormalAcceleration();
 }

@@ -1,21 +1,39 @@
 package com.iteso.behaviors.implementations;
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IPower;
 
-public class Banana implements iPower {
-
-    public String catchPower() {
+/**
+ * Class Banana.
+ */
+public class Banana implements IPower {
+    /**
+     *
+     * @return status.
+     */
+    public final String catchPower() {
         return "Banana Power!";
     }
 
-    public String throwForward() {
+    /**
+     *
+     * @return status.
+     */
+    public final String throwForward() {
         return "Here goes a Banana!";
     }
 
-    public String trhowBackwards() {
+    /**
+     *
+     * @return status.
+     */
+    public final String trhowBackwards() {
         return "Watch out for the banana!";
     }
 
-    public String retainPower() {
+    /**
+     *
+     * @return status.
+     */
+    public final String retainPower() {
         return "Preparing banana!";
     }
 }

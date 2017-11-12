@@ -1,21 +1,39 @@
 package com.iteso.behaviors.implementations;
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IPower;
 
-public class NormalMode implements iPower {
-
-    public String catchPower() {
+/**
+ * Class Normal mode.
+ */
+public class NormalMode implements IPower {
+    /**
+     *
+     * @return status.
+     */
+    public final String catchPower() {
         return "No power!";
     }
 
-    public String throwForward() {
+    /**
+     *
+     * @return status.
+     */
+    public final String throwForward() {
         return "Cant throw anything!";
     }
 
-    public String trhowBackwards() {
+    /**
+     *
+     * @return status.
+     */
+    public final String trhowBackwards() {
         return "Cant throw anything!";
     }
 
-    public String retainPower() {
+    /**
+     *
+     * @return status.
+     */
+    public final String retainPower() {
         return "No power!";
     }
 }

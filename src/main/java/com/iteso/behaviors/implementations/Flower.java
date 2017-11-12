@@ -1,21 +1,39 @@
 package com.iteso.behaviors.implementations;
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IPower;
 
-public class Flower implements iPower {
-
-    public String catchPower() {
+/**
+ * Class Flower.
+ */
+public class Flower implements IPower {
+    /**
+     *
+     * @return status.
+     */
+    public final String catchPower() {
         return "Fire mode!";
     }
 
-    public String throwForward() {
+    /**
+     *
+     * @return status.
+     */
+    public final String throwForward() {
         return "BURN!!";
     }
 
-    public String trhowBackwards() {
+    /**
+     *
+     * @return status.
+     */
+    public final String trhowBackwards() {
         return "See ya in hell!!";
     }
 
-    public String retainPower() {
+    /**
+     *
+     * @return status.
+     */
+    public final String retainPower() {
         return "Burn them all!!";
     }
 }

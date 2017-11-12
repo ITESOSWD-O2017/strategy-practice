@@ -1,8 +1,24 @@
 package com.iteso.behaviors;
 
-public interface iAccelerate {
+/**
+ * interface.
+ */
+public interface Iaccelerate {
+    /**
+     * start accelerating.
+     * @return acceleration.
+     */
+    String startAccelerating();
 
-    public String startAccelerating();
-    public String acceleration();
-    public String slowDown();
+    /**acceleration.
+     *
+     * @return null.
+     */
+    String acceleration();
+
+    /**
+     * slowDown.
+     * @return slowDown.
+     */
+    String slowDown();
 }
