@@ -1,6 +1,7 @@
 package com.iteso.nintendo;
 
 import com.iteso.nintendo.characters.Luigi;
+import com.iteso.nintendo.items.ShellPower;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,6 +11,7 @@ import static org.junit.Assert.assertEquals;
  * Created by rvillalobos on 3/3/16.
  */
 public class LuigiTest {
+
     Luigi luigi;
 
     @Before
@@ -18,58 +20,17 @@ public class LuigiTest {
     }
 
     @Test
-    public void testPowerWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
-
-        assertEquals("fire", luigi.getCurrentPower());
+    public void performXButtonAction() throws Exception {
     }
 
     @Test
-    public void testBActionWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
-
-        assertEquals("fireball", luigi.performBButtonAction());
+    public void performYButtonAction() throws Exception {
     }
 
     @Test
-    public void testPowerWhenLuigiTakesAStar(){
-        luigi.setPower("star");
-
-        assertEquals("invincibility", luigi.getCurrentPower());
+    public void performAButtonAction() throws Exception {
     }
 
-    @Test
-    public void testBActionWhenLuigiTakesAStar(){
-        luigi.setPower("star");
 
-        assertEquals("dash", luigi.performBButtonAction());
-    }
-
-    @Test
-    public void testPowerWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
-
-        assertEquals("normal", luigi.getCurrentPower());
-    }
-
-    @Test
-    public void testBActionWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
-
-        assertEquals("nothing", luigi.performBButtonAction());
-    }
-    @Test
-    public void testPowerWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.getCurrentPower());
-    }
-
-    @Test
-    public void testBActionWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.performBButtonAction());
-    }
 
 }

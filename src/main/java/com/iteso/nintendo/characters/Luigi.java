@@ -6,10 +6,13 @@ import com.iteso.nintendo.items.StarPower;
 import com.iteso.nintendo.items.TunderPower;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Personaje Luigi.
  */
 public class Luigi extends NintendoCharacter{
 
+    /**
+     * Constructor de Luigi.
+     */
     public Luigi(){
         setPower(new StarPower());
         setName("Luigi ");
@@ -17,17 +20,26 @@ public class Luigi extends NintendoCharacter{
         setCurrentAccelerate(new VeryFastAccelerate());
     }
 
-    @Override
+    /**
+     *
+     * @return String aun no devuelve nada
+     */
     public String performXButtonAction() {
         return null;
     }
 
-    @Override
+    /**
+     *
+     * @return String aun no devuelve nada
+     */
     public String performYButtonAction() {
         return null;
     }
 
-    @Override
+    /**
+     *
+     * @return String aun no devuelve nada
+     */
     public String performAButtonAction() {
         return "jump";
     }

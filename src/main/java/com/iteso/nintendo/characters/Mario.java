@@ -7,10 +7,13 @@ import com.iteso.nintendo.items.TunderPower;
 import com.iteso.nintendo.items.iPower;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Personaje Mario.
  */
 public class Mario extends NintendoCharacter {
 
+    /**
+     * Constructor de Mario.
+     */
     public Mario(){
         setPower(new ShellPower());
         setName("Mario");
@@ -18,17 +21,26 @@ public class Mario extends NintendoCharacter {
         setCurrentAccelerate(new FastAccelerate());
     }
 
-    @Override
+    /**
+     *
+     * @return String aun no devuelve nada
+     */
     public String performXButtonAction() {
         return null;
     }
 
-    @Override
+    /**
+     *
+     * @return String aun no devuelve nada
+     */
     public String performYButtonAction() {
         return null;
     }
 
-    @Override
+    /**
+     *
+     * @return String aun no devuelve nada
+     */
     public String performAButtonAction() {
         return "jump";
     }
