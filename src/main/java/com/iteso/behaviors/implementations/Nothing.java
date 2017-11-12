@@ -3,27 +3,28 @@ package com.iteso.behaviors.implementations;
 import com.iteso.behaviors.IPower;
 
 /**
- * Created by AlejandraSahagun on 08/11/16.
+ * Created by AlejandraSahagun on 11/11/16.
  */
-public class RedTurtle implements IPower {
+public class Nothing implements IPower {
 
     /** @return String. */
     public final String getPower() {
-        return "My power is amazing";
+        return "I haven't any power";
     }
 
     /** @return String. */
     public final String usePower() {
-        return "I will hit the enemy";
+        return "-.-!";
     }
 
     /** @return String. */
     public final String losePower() {
-        return "Be careful, you are unprotected";
+        return "o.o";
     }
 
     /** @return String. */
     public final String getPowerDescription() {
-        return "RedTurtle"; }
+        return "Nothing";
+    }
 
 }

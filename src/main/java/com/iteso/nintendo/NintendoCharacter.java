@@ -1,46 +1,57 @@
 package com.iteso.nintendo;
 
-import com.iteso.behaviors.iAccelerate;
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IAccelerate;
+import com.iteso.behaviors.IPower;
 
 /**
  * Created by rvillalobos on 3/3/16.
  */
 public abstract class NintendoCharacter {
-    private String name = null;
-    //Agregar variables iAcelerate y iPower
-    protected iAccelerate acceleration = null;
-    protected iPower currentPower = null;
 
-    public String getName() {
+    /** Name. */
+    private String name = "";
+    /** IAccelerate. */
+    private IAccelerate acceleration = null;
+    /** IPower. */
+    private IPower currentPower = null;
+
+    /** @return name. */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    /** @param n */
+    public final void setName(final String n) {
+        this.name = n;
     }
 
-    //Agregar los getters y setters de iAcelerate
-    public iAccelerate getAcceleration() {
+    /** @return IAccelerate. */
+    public final IAccelerate getAcceleration() {
         return acceleration;
     }
 
-    public void setAcceleration(iAccelerate acceleration) {
+    /** @param acc */
+    public final void setAcceleration(final IAccelerate acc) {
         this.acceleration = acceleration;
     }
 
-    //Modificar el setPower para que sea el de iPower
-    public iPower getCurrentPower() {
+    /** @return IPower */
+    public final IPower getCurrentPower() {
         return currentPower;
     }
 
-    public void setCurrentPower(iPower currentPower) {
+    /** @param cPower */
+    public final void setCurrentPower(final IPower cPower) {
         this.currentPower = currentPower;
     }
 
+    /** @return String. */
     public abstract String performXButtonAction();
+    /** @return String. */
     public abstract String performYButtonAction();
+    /** @return String. */
     public abstract String performAButtonAction();
+    /** @return String. */
     public abstract String performBButtonAction();
 
 }

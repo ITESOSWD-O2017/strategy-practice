@@ -1,7 +1,5 @@
 package com.iteso.characters;
 
-import com.iteso.behaviors.iPower;
-import com.iteso.behaviors.implementations.BillBala;
 import com.iteso.behaviors.implementations.Flower;
 import com.iteso.behaviors.implementations.Normal;
 import com.iteso.nintendo.NintendoCharacter;
@@ -11,6 +9,7 @@ import com.iteso.nintendo.NintendoCharacter;
  */
 public class Luigi extends NintendoCharacter {
 
+    /** Constructor. */
     public Luigi() {
         setName("Luigi");
         setCurrentPower(new Flower());
@@ -18,32 +17,33 @@ public class Luigi extends NintendoCharacter {
     }
 
     @Override
-    public String performXButtonAction() {
-        return null;
-    }
-
-    @Override
-    public String performYButtonAction() {
-        return null;
-    }
-
-    @Override
-    public String performAButtonAction() {
+    public final String performXButtonAction() {
         return "jump";
     }
 
     @Override
-    public String performBButtonAction() {
-        if (currentPower.getPower() == "Flower")
+    public final String performYButtonAction() {
+        return null;
+    }
+
+    @Override
+    public final String performAButtonAction() {
+        return "jump";
+    }
+
+    @Override
+    public final String performBButtonAction() {
+        if (getCurrentPower().getPowerDescription() == "Flower") {
             return "fireball";
-        else if (currentPower.getPower() == "RedTurtle")
+        } else if (getCurrentPower().getPowerDescription() == "RedTurtle") {
             return "shell";
-        else if (currentPower.getPower() == "Star")
+        } else if (getCurrentPower().getPowerDescription() == "Star") {
+            return "invincibility";
+        } else if (getCurrentPower().getPowerDescription() == "Nothing") {
             return "nothing";
-        else if (currentPower.getPower() == "Normal")
-            return "nothing";
-        else
+        } else {
             return "error";
+        }
     }
 
 }

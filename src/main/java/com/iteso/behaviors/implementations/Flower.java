@@ -1,18 +1,30 @@
 package com.iteso.behaviors.implementations;
 
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IPower;
 
-public class Flower implements iPower {
+/**
+ * Created by AlejandraSahagun on 08/11/16.
+ */
+public class Flower implements IPower {
 
-    public String getPower() {
+    /** @return String. */
+    public final String getPower() {
         return "I will burn everyone";
     }
 
-    public String usePower() {
+    /** @return String. */
+    public final String usePower() {
         return "Fire!!!";
     }
 
-    public String losePower() {
+    /** @return String. */
+    public final String losePower() {
         return "You are normal, again";
     }
+
+    /** @return String. */
+    public final String getPowerDescription() {
+        return "Flower";
+    }
+
 }

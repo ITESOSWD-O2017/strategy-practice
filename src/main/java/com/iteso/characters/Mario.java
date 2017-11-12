@@ -9,6 +9,7 @@ import com.iteso.nintendo.NintendoCharacter;
  */
 public class Mario extends NintendoCharacter {
 
+    /** Constructor. */
     public Mario() {
         setName("Mario");
         setCurrentPower(new RedTurtle());
@@ -16,31 +17,32 @@ public class Mario extends NintendoCharacter {
     }
 
     @Override
-    public String performXButtonAction() {
+    public final String performXButtonAction() {
         return null;
     }
 
     @Override
-    public String performYButtonAction() {
+    public final String performYButtonAction() {
         return null;
     }
 
     @Override
-    public String performAButtonAction() {
+    public final String performAButtonAction() {
         return "jump";
     }
 
     @Override
-    public String performBButtonAction() {
-        if (currentPower.getPower() == "Flower")
+    public final String performBButtonAction() {
+        if (getCurrentPower().getPowerDescription() == "Flower") {
             return "fireball";
-        else if (currentPower.getPower() == "RedTurtle")
+        } else if (getCurrentPower().getPowerDescription() == "RedTurtle") {
             return "shell";
-        else if (currentPower.getPower() == "Star")
+        } else if (getCurrentPower().getPowerDescription() == "Star") {
+            return "invincibility";
+        } else if (getCurrentPower().getPowerDescription() == "Nothing") {
             return "nothing";
-        else if (currentPower.getPower() == "Normal")
-            return "nothing";
-        else
+        } else {
             return "error";
+        }
     }
 }

@@ -79,6 +79,8 @@
           <check/>
         </configuration>
       </plugin>
+
     </plugins>
   </reporting>
 </project>
+

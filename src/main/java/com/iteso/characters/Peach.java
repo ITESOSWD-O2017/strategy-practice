@@ -5,13 +5,13 @@ import com.iteso.behaviors.implementations.RedTurtle;
 import com.iteso.nintendo.NintendoCharacter;
 
 /**
- * Created by AleSahagun on 08/11/17.
+ * Created by AleSahagun on 11/11/17.
  */
-public class Joshi  extends NintendoCharacter {
+public class Peach extends NintendoCharacter {
 
     /** Constructor. */
-    public Joshi() {
-        setName("Joshi");
+    public Peach() {
+        setName("Peach");
         setCurrentPower(new RedTurtle());
         setAcceleration(new Normal());
     }

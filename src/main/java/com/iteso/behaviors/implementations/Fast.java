@@ -3,27 +3,28 @@ package com.iteso.behaviors.implementations;
 import com.iteso.behaviors.IAccelerate;
 
 /**
- * Created by AlejandraSahagun on 08/11/16.
+ * Created by AlejandraSahagun on 11/11/16.
  */
-public class Normal implements IAccelerate {
+public class Fast implements IAccelerate {
 
     /** @return String. */
     public final String accelerate() {
-        return "Go go go";
+        return "Your speed increased by 200 percent, you are the most speed";
     }
 
     /** @return String. */
     public final String decelerate() {
-        return "You are losing your superpowers";
+        return "Oh no! your speed is going down";
     }
 
     /** @return String. */
     public final String skid() {
-        return "If you want to go to the left, turn to the right";
+        return "Your laps are the best";
     }
 
     /** @return String. */
     public final String stop() {
-        return "You stopped";
+        return "You have stopped";
     }
 }
+

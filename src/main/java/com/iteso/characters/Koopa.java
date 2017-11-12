@@ -1,18 +1,18 @@
 package com.iteso.characters;
 
 import com.iteso.behaviors.implementations.Normal;
-import com.iteso.behaviors.implementations.RedTurtle;
+import com.iteso.behaviors.implementations.Star;
 import com.iteso.nintendo.NintendoCharacter;
 
 /**
- * Created by AleSahagun on 08/11/17.
+ * Created by AleSahagun on 11/11/17.
  */
-public class Joshi  extends NintendoCharacter {
+public class Koopa extends NintendoCharacter {
 
     /** Constructor. */
-    public Joshi() {
-        setName("Joshi");
-        setCurrentPower(new RedTurtle());
+    public Koopa() {
+        setName("Koopa");
+        setCurrentPower(new Star());
         setAcceleration(new Normal());
     }
 

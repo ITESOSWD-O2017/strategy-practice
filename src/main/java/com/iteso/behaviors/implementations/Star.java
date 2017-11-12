@@ -1,18 +1,29 @@
 package com.iteso.behaviors.implementations;
 
-import com.iteso.behaviors.iPower;
+import com.iteso.behaviors.IPower;
 
-public class Star implements iPower {
+/**
+ * Created by AlejandraSahagun on 08/11/16.
+ */
+public class Star implements IPower {
 
-    public String getPower() {
+    /** @return String. */
+    public final String getPower() {
         return "I'm amazing and invincible!";
     }
 
-    public String usePower() {
+    /** @return String. */
+    public final String usePower() {
         return "Get out of the way";
     }
 
-    public String losePower() {
+    /** @return String. */
+    public final String losePower() {
         return "They come after us D:";
     }
+
+    /** @return String. */
+    public final String getPowerDescription() {
+        return "Star"; }
+
 }
