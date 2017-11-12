@@ -24,7 +24,7 @@ public class MaximumAccelerationTest {
     }
 
     @Test
-    public void decelerate() throws Exception {
+    public void SlowDown() throws Exception {
         assertEquals("Brake now!!",maximum.slowDown());
     }
 }

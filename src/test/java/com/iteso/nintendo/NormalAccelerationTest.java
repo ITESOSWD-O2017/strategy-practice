@@ -22,7 +22,7 @@ public class NormalAccelerationTest {
     }
 
     @Test
-    public void decelerate() throws Exception {
+    public void SlowDown() throws Exception {
         assertEquals("Brake!",normal.slowDown());
     }
 }
