@@ -4,15 +4,15 @@ import com.iteso.nintendo.com.iteso.impl.FastAccel;
 import com.iteso.nintendo.com.iteso.impl.NormalAccel;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Class Toad.
  */
-public class Luigi extends NintendoCharacter {
+public class Toad extends NintendoCharacter {
     /**
      *
      */
-    public Luigi() {
+    public Toad() {
         setCurrentPower("normal");
-        setName("Luigi");
+        setName("Toad");
         setSpeed("normal");
     }
 

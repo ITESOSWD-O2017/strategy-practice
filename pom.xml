@@ -20,6 +20,11 @@
       <version>1.10.19</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>findbugs-maven-plugin</artifactId>
+      <version>3.0.1</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>strategy-practice</finalName>
@@ -78,6 +83,11 @@
           </formats>
           <check/>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.8</version>
       </plugin>
     </plugins>
   </reporting>

@@ -4,75 +4,77 @@ import com.iteso.nintendo.com.iteso.impl.FastAccel;
 import com.iteso.nintendo.com.iteso.impl.NormalAccel;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Created by Miguel on 10/11/17.
  */
 public class Mario extends NintendoCharacter {
-
-    public Mario(){
+    /**
+     *
+     */
+    public Mario() {
         setCurrentPower("normal");
         setName("Mario");
         setSpeed("normal");
     }
 
+    /**
+     *
+     * @return String regresa la velocidad actual.
+     */
     @Override
-    public String performXButtonAction() {
+    public final String performXButtonAction() {
         decelerate();
-        if (getAccelType()){
+        if (getAccelType()) {
             setAcceleration(new FastAccel());
-        }
-        else {
+        } else {
             setAcceleration(new NormalAccel());
         }
 
-        return "I´m decelerating now I am"+ getSpeed();
+        return "I´m decelerating now I am " + getSpeed();
     }
 
     @Override
-    public String performYButtonAction() {
+    public final String performYButtonAction() {
         accelerate();
         setAcceleration(new NormalAccel());
-        return "I´m accelerating now I am "+ getSpeed();
+        return "I´m accelerating now I am " + getSpeed();
     }
 
     @Override
-    public String performAButtonAction() {
+    public final String performAButtonAction() {
         return "jump";
     }
 
     @Override
-    public String performBButtonAction() {
-        if (getCurrentPower() == "fire")
+    public final String performBButtonAction() {
+        if (getCurrentPower() == "fire") {
             return "fireball";
-        else if (getCurrentPower() == "invincibility")
+        } else if (getCurrentPower() == "invincibility") {
             return "dash";
-        else if (getCurrentPower() == "normal")
+        } else if (getCurrentPower() == "normal") {
             return "nothing";
-        else
+        } else {
             return "error";
+        }
     }
     @Override
-    public void setPower(iPower powerItem){
-        if(getCurrentPower().toLowerCase()!= "normal"){
+    public  final void setPower(final IPower powerItem) {
+        if (getCurrentPower().toLowerCase() != "normal") {
             return;
-        }
-
-        else if(powerItem.getPower().toLowerCase() == "flower"){
+        } else if (powerItem.getPower().toLowerCase() == "flower") {
             powerItem.preparePower();
             setCurrentPower(powerItem.releasePower());
-        }
-        else if(powerItem.getPower().toLowerCase() == "star"){
+        } else if (powerItem.getPower().toLowerCase() == "star") {
             powerItem.preparePower();
             setCurrentPower(powerItem.releasePower());
             setAccelerationType(true);
             performYButtonAction();
-        }
-        else if(powerItem.getPower().toLowerCase() == "clear power"){
+        } else if (powerItem.getPower().toLowerCase() == "clear power") {
             powerItem.preparePower();
             setCurrentPower(powerItem.releasePower());
             setAccelerationType(true);
             setSpeed("normal");
-        }
-        else
+        } else {
             setCurrentPower("error");
+        }
     }
 }

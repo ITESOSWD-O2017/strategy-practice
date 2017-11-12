@@ -1,18 +1,17 @@
 package com.iteso.nintendo;
-
 import com.iteso.nintendo.com.iteso.impl.FastAccel;
 import com.iteso.nintendo.com.iteso.impl.NormalAccel;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Class Peach.
  */
-public class Luigi extends NintendoCharacter {
+public class Peach extends NintendoCharacter {
     /**
      *
      */
-    public Luigi() {
+    public Peach() {
         setCurrentPower("normal");
-        setName("Luigi");
+        setName("Peach");
         setSpeed("normal");
     }
 

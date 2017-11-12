@@ -1,17 +1,32 @@
 package com.iteso.nintendo.com.iteso.impl;
 
-import com.iteso.nintendo.iPower;
+import com.iteso.nintendo.IPower;
 
-public class Star implements iPower {
-    public String getPower(){
+/**
+ * Class Star.
+ */
+public class Star implements IPower {
+    /**
+     *
+     * @return String el poder.
+     */
+    public final String getPower() {
         return "star";
     }
 
-    public String preparePower(){
+    /**
+     *
+     * @return String prepara el poder.
+     */
+    public final String preparePower() {
         return "Light character";
     }
 
-    public String releasePower(){
-        return "Invincibility";
+    /**
+     *
+     * @return String lanza el poder.
+     */
+    public final String releasePower() {
+        return "invincibility";
     }
 }

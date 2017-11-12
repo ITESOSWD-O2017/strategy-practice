@@ -1,16 +1,31 @@
 package com.iteso.nintendo.com.iteso.impl;
-import com.iteso.nintendo.iPower;
+import com.iteso.nintendo.IPower;
 
-public class Flower implements iPower {
-    public String getPower(){
+/**
+ * Class Flower.
+ */
+public class Flower implements IPower {
+    /**
+     *
+     * @return String el poder actual.
+     */
+    public final String getPower() {
         return "flower";
     }
 
-    public String preparePower(){
+    /**
+     *
+     * @return String de como prepara el poder.
+     */
+    public final String preparePower() {
         return "fire hand";
     }
 
-    public String releasePower(){
+    /**
+     *
+     * @return String lanza poder.
+     */
+    public final String releasePower() {
         return "fire";
     }
 }

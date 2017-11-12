@@ -4,15 +4,15 @@ import com.iteso.nintendo.com.iteso.impl.FastAccel;
 import com.iteso.nintendo.com.iteso.impl.NormalAccel;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Class Bowser.
  */
-public class Luigi extends NintendoCharacter {
+public class Bowser extends NintendoCharacter {
     /**
      *
      */
-    public Luigi() {
+    public Bowser() {
         setCurrentPower("normal");
-        setName("Luigi");
+        setName("Bowser");
         setSpeed("normal");
     }
 

@@ -1,17 +1,31 @@
 package com.iteso.nintendo.com.iteso.impl;
 
-import com.iteso.nintendo.iPower;
-
-public class Clear implements iPower {
-    public String getPower(){
+import com.iteso.nintendo.IPower;
+/**
+ * Class Clear.
+ */
+public class Clear implements IPower {
+    /**
+     *
+     * @return String el poder actual.
+     */
+    public final String getPower() {
         return "clear power";
     }
 
-    public String preparePower(){
+    /**
+     *
+     * @return String de como se prepara el poder.
+     */
+    public final String preparePower() {
         return "Vanish all";
     }
 
-    public String releasePower(){
+    /**
+     *
+     * @return String de como se lanza el poder.
+     */
+    public final String releasePower() {
         return "normal";
     }
 }

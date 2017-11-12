@@ -1,62 +1,144 @@
 package com.iteso.nintendo;
 
 /**
- * Created by rvillalobos on 3/3/16.
+ * Created by Miguel on 10/11/17.
  */
 public abstract class NintendoCharacter {
+    /**
+     * String speed.
+     */
       private String speed = null;
-      private String name = null;
+    /**
+     * String name.
+     */
+    private String name = null;
+    /**
+     * String currentPower.
+     */
       private String currentPower = null;
-      private boolean accel = false;
+    /**
+     * String accel.
+     */
+    private boolean accel = false;
+    /**
+     * String accelerationType.
+     */
       private boolean accelerationType = false;
 
-    public String getSpeed() {
+    /**
+     *
+     * @return String devuelve la velocidad.
+     */
+    public final String getSpeed() {
         return speed;
     }
 
-    public void accelerate(){
-        this.accel=true;
+    /**
+     * accelerate.
+     */
+    public final void accelerate() {
+        this.accel = true;
     }
-    public void decelerate(){
-        this.accel=false;
-    }
-    public void setAcceleration(iAccelerate accelerationType){
-       if (accel){
-           setSpeed(accelerationType.accel(this.speed));
-       }
-       else{
-           setSpeed(accelerationType.decel(this.speed));
-       }
-    }
-    public void setSpeed(String speed) {
-        this.speed = speed;
+    /**
+     * decelerate.
+     */
+    public final void decelerate() {
+        this.accel = false;
     }
 
-    public String getName() {
+    /**
+     *
+     * @param accelerationType1 es el tipo de aceleración que va a recibir.
+     */
+    public final void setAcceleration(final IAccelerate accelerationType1) {
+       if (accel) {
+           setSpeed(accelerationType1.accel(this.speed));
+       } else {
+           setSpeed(accelerationType1.decel(this.speed));
+       }
+    }
+
+    /**
+     *
+     * @param speed1 establece la velocidad.
+     */
+    public final void setSpeed(final String speed1) {
+        this.speed = speed1;
+    }
+
+    /**
+     *
+     * @return regresa el nombre.
+     */
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    /**
+     *
+     * @param name1 establece el nombre.
+     */
+    public final void setName(final String name1) {
+        this.name = name1;
     }
 
+    /**
+     *
+     * @return String accion del boton.
+     */
     public abstract String performXButtonAction();
+    /**
+     *
+     * @return String accion del boton.
+     */
     public abstract String performYButtonAction();
+    /**
+     *
+     * @return String accion del boton.
+     */
     public abstract String performAButtonAction();
+    /**
+     *
+     * @return String accion del boton.
+     */
     public abstract String performBButtonAction();
 
-    public abstract void setPower(iPower powerItem);
-    public void setAccelerationType(boolean type){
-        this.accelerationType=type;
+    /**
+     *
+     * @param powerItem es el power item que se va a usar.
+     */
+    public abstract void setPower(IPower powerItem);
+
+    /**
+     *
+     * @param type el tipo de aceleración.
+     *
+     */
+    public final void setAccelerationType(final boolean type) {
+        this.accelerationType = type;
     }
-    public boolean getAccelType(){
+
+    /**
+     *
+     * @return un booleano que regresa el tipo de aceleracion que usamos.
+     */
+    public final boolean getAccelType() {
         return this.accelerationType;
     }
-    public String getCurrentPower() {
+
+    /**
+     *
+     * @return el poder actual.
+     */
+    public final String getCurrentPower() {
         return currentPower;
     }
 
-    public void setCurrentPower(String currentPower) {
-        this.currentPower = currentPower;
+    /**
+     *
+     * @param currentPower1 establece el poder actual.
+     */
+    public final void setCurrentPower(final String currentPower1) {
+        this.currentPower = currentPower1;
     }
 }
