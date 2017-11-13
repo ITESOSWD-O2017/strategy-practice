@@ -1,9 +1,14 @@
 package com.iteso.nintendo;
 
+import com.iteso.nintendo.powerup.implementations.Fireball;
+import com.iteso.nintendo.powerup.implementations.Normal;
+import com.iteso.nintendo.powerup.implementations.Star;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by rvillalobos on 3/3/16.
@@ -18,57 +23,53 @@ public class LuigiTest {
 
     @Test
     public void testPowerWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
+        luigi.setPower(new Fireball());
 
-        assertEquals("fire", luigi.getCurrentPower());
+        assertThat(luigi.getCurrentPower(), instanceOf(Fireball.class));
     }
 
     @Test
     public void testBActionWhenLuigiTakesAFlower(){
-        luigi.setPower("flower");
+        luigi.setPower(new Fireball());
 
-        assertEquals("fireball", luigi.performBButtonAction());
+        assertEquals("Front Throw", luigi.performBButtonAction());
+        luigi.performBButtonAction();
+        luigi.performBButtonAction();
+        luigi.performBButtonAction();
+        luigi.performBButtonAction();
+        luigi.performBButtonAction();
+        luigi.performBButtonAction();
+        luigi.performBButtonAction();
+        luigi.performBButtonAction();
+        luigi.performBButtonAction();
     }
 
     @Test
     public void testPowerWhenLuigiTakesAStar(){
-        luigi.setPower("star");
+        luigi.setPower(new Star());
 
-        assertEquals("invincibility", luigi.getCurrentPower());
+        assertThat(luigi.getCurrentPower(), instanceOf(Star.class));
     }
 
     @Test
     public void testBActionWhenLuigiTakesAStar(){
-        luigi.setPower("star");
+        luigi.setPower(new Star());
 
-        assertEquals("dash", luigi.performBButtonAction());
+        assertEquals("Front Throw", luigi.performBButtonAction());
     }
 
     @Test
     public void testPowerWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
+        luigi.setPower(new Normal());
 
-        assertEquals("normal", luigi.getCurrentPower());
+        assertThat(luigi.getCurrentPower(), instanceOf(Normal.class));
     }
 
     @Test
     public void testBActionWhenLuigiIsNormal(){
-        luigi.setPower("clear power");
+        luigi.setPower(new Normal());
 
-        assertEquals("nothing", luigi.performBButtonAction());
-    }
-    @Test
-    public void testPowerWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.getCurrentPower());
-    }
-
-    @Test
-    public void testBActionWhenError(){
-        luigi.setPower("invalid");
-
-        assertEquals("error", luigi.performBButtonAction());
+        assertEquals("Front Throw", luigi.performBButtonAction());
     }
 
 }

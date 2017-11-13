@@ -11,16 +11,32 @@ public class Star implements Ipower{
     }
 
     public void backThrow(){
-        System.out.println("You Used a Star, you are Invincible");
+        if(items > 0) {
+            items--;
+            System.out.println("You Used a Star, you are Invincible");
+        }
+        else
+            System.out.println("You have no stars");
 
     }
 
     public void frontThrow(){
-        System.out.println("You Used a Star, you are Invincible");
+        if(items > 0) {
+            items--;
+            System.out.println("You Used a Star, you are Invincible");
+        }
+        else
+            System.out.println("You have no stars");
     }
 
     public void discard(){
-        System.out.println("You discarded a Star");
+        if(items > 0) {
+            items--;
+            System.out.println("You discarded a Star");
+        }
+        else
+            System.out.println("You have no stars to discard");
+
     }
 
 }
